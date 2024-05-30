@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+
+  mongodb:
+    image: mongo:6-jammy
+    ports:
+      - '27017:27017'
+    volumes:
+      - dbdata6:/data/db
+
+  app:
+    build: .
+    container_name: financial_analyzer_app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongodb
+    env_file:
+      - .env
+    command: ["npm", "start"]
+
+volumes:
+  dbdata6:
