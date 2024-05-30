@@ -37,6 +37,7 @@ financial_analyzer_js/
 │ ├── app.js
 │ ├── config.js
 ├── .env
+├── .gitignore
 ├── Dockerfile
 ├── docker-compose.yml
 ├── package.json
